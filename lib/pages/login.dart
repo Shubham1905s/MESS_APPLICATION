@@ -1,3 +1,4 @@
+import 'package:collegeproject/pages/forgotpassword.dart';
 import 'package:collegeproject/widget/content_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -140,12 +141,21 @@ class _LogInState extends State<LogIn> {
                             const SizedBox(
                               height: 20.0,
                             ),
-                            Container(
-                                alignment: Alignment.topRight,
-                                child: Text(
-                                  "Forgot Password?",
-                                  style: AppWidget.semiBoldTextFeildStyle(),
-                                )),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgotPassword()));
+                              },
+                              child: Container(
+                                  alignment: Alignment.topRight,
+                                  child: Text(
+                                    "Forgot Password?",
+                                    style: AppWidget.semiBoldTextFeildStyle(),
+                                  )),
+                            ),
                             const SizedBox(
                               height: 80.0,
                             ),

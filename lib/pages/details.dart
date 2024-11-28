@@ -10,12 +10,15 @@ class Details extends StatefulWidget {
 
 class _DetailsState extends State<Details> {
   int a = 1;
+  double basePrice = 28.0; // Base price of a single item
 
   @override
   Widget build(BuildContext context) {
+    double totalPrice = basePrice * a; // Calculate total price dynamically
+
     return Scaffold(
       body: Container(
-        margin: const EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
+        margin: EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -23,7 +26,7 @@ class _DetailsState extends State<Details> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: const Icon(
+                child: Icon(
                   Icons.arrow_back_ios_new_outlined,
                   color: Colors.black,
                 )),
@@ -33,7 +36,7 @@ class _DetailsState extends State<Details> {
               height: MediaQuery.of(context).size.height / 2.5,
               fit: BoxFit.fill,
             ),
-            const SizedBox(
+            SizedBox(
               height: 15.0,
             ),
             Row(
@@ -51,32 +54,32 @@ class _DetailsState extends State<Details> {
                     ),
                   ],
                 ),
-                const Spacer(),
+                Spacer(),
                 GestureDetector(
                   onTap: () {
                     if (a > 1) {
                       --a;
+                      setState(() {});
                     }
-                    setState(() {});
                   },
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(8)),
-                    child: const Icon(
+                    child: Icon(
                       Icons.remove,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 20.0,
                 ),
                 Text(
                   a.toString(),
                   style: AppWidget.semiBoldTextFeildStyle(),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 20.0,
                 ),
                 GestureDetector(
@@ -88,7 +91,7 @@ class _DetailsState extends State<Details> {
                     decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(8)),
-                    child: const Icon(
+                    child: Icon(
                       Icons.add,
                       color: Colors.white,
                     ),
@@ -96,7 +99,7 @@ class _DetailsState extends State<Details> {
                 )
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 20.0,
             ),
             Text(
@@ -104,7 +107,7 @@ class _DetailsState extends State<Details> {
               maxLines: 4,
               style: AppWidget.LightTextFeildStyle(),
             ),
-            const SizedBox(
+            SizedBox(
               height: 30.0,
             ),
             Row(
@@ -113,14 +116,14 @@ class _DetailsState extends State<Details> {
                   "Delivery Time",
                   style: AppWidget.semiBoldTextFeildStyle(),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 25.0,
                 ),
-                const Icon(
+                Icon(
                   Icons.alarm,
                   color: Colors.black54,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 5.0,
                 ),
                 Text(
@@ -129,7 +132,7 @@ class _DetailsState extends State<Details> {
                 )
               ],
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 40.0),
               child: Row(
@@ -143,41 +146,41 @@ class _DetailsState extends State<Details> {
                         style: AppWidget.semiBoldTextFeildStyle(),
                       ),
                       Text(
-                        "\$28",
+                        "\$${totalPrice.toStringAsFixed(2)}", // Display total price
                         style: AppWidget.HeadlineTextFeildStyle(),
                       )
                     ],
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width / 2,
-                    padding: const EdgeInsets.all(8),
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        const Text(
+                        Text(
                           "Add to cart",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
                               fontFamily: 'Poppins'),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 30.0,
                         ),
                         Container(
-                          padding: const EdgeInsets.all(3),
+                          padding: EdgeInsets.all(3),
                           decoration: BoxDecoration(
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(8)),
-                          child: const Icon(
+                          child: Icon(
                             Icons.shopping_cart_outlined,
                             color: Colors.white,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10.0,
                         ),
                       ],

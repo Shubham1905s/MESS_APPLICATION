@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "982148064276",
-    "project_id": "fooddeliveryapp-33c6e",
-    "storage_bucket": "fooddeliveryapp-33c6e.firebasestorage.app"
+    "project_number": "433969056606",
+    "project_id": "mess-app-ec79e",
+    "storage_bucket": "mess-app-ec79e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:982148064276:android:750872a202e1121db23301",
+        "mobilesdk_app_id": "1:433969056606:android:955b807555519d3e839dcf",
         "android_client_info": {
-          "package_name": "com.example.collegeprojecgt"
+          "package_name": "com.example.messapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCrkKE3L2b6V2s-fhpdxNN2NCTUyzIj_1Q"
+          "current_key": "AIzaSyCQq3r2GlbMGrWOKziRN0gWFBiUIa5v5TA"
         }
       ],
       "services": {

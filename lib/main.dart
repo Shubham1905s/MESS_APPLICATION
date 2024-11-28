@@ -1,3 +1,9 @@
+import 'package:collegeproject/admin/add_food.dart';
+import 'package:collegeproject/admin/admin_login.dart';
+import 'package:collegeproject/admin/home_admin.dart';
+import 'package:collegeproject/pages/bottomnav.dart';
+import 'package:collegeproject/pages/home.dart';
+import 'package:collegeproject/pages/wallet.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 // import 'package:firebase_core/firebase_core.dart';
@@ -8,13 +14,12 @@ void main() {
   if (kIsWeb) {
     Firebase.initializeApp(
         options: FirebaseOptions(
-            apiKey: "AIzaSyA_JV3aC_LYgx5TTX45pbFlXCPBYsWDx5o",
-            authDomain: "fooddeliveryapp-33c6e.firebaseapp.com",
-            projectId: "fooddeliveryapp-33c6e",
-            storageBucket: "fooddeliveryapp-33c6e.firebasestorage.app",
-            messagingSenderId: "982148064276",
-            appId: "1:982148064276:web:5a9c4044f4643068b23301",
-            measurementId: "G-DWKZMNR0FP"));
+            apiKey: "AIzaSyChKTXOoALn-Wgo6FhK896lHjrp0advtDE",
+            authDomain: "mess-app-ec79e.firebaseapp.com",
+            projectId: "mess-app-ec79e",
+            storageBucket: "mess-app-ec79e.appspot.com",
+            messagingSenderId: "433969056606",
+            appId: "1:433969056606:web:521a8e9010ee6232839dcf"));
   } else {
     Firebase.initializeApp();
   }
@@ -53,7 +58,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const Onboard());
+        home: const AdminLogin());
   }
 }
 
